@@ -226,7 +226,7 @@ switch (problemSubmit) {
 					<div class="flex-container2">
 						<div><b><u> Data Preparation</u></b></div>
 						<div title="Preprocessing changes the input data to fit our model.">
-							<label><i>preprocessing: Resize(256), CenterCrop(224), ToTensor(), grayscale to RGB</i></label>
+							<text><i>preprocessing: Resize(256), CenterCrop(224), ToTensor(), grayscale to RGB</i></text>
 						</div>
 					</div>
 					`;
@@ -356,17 +356,16 @@ switch (problemSubmit) {
 					</div>
 				`;
 		
-        /*const IC_classes = document.createElement('div');
+        const IC_classes = document.createElement('div');
         content.node.appendChild(IC_classes);
 		IC_classes.innerHTML = `
 					<div class="flex-container2">
-						<div title="Select your dataset here!">
+						<div title="The number of output classes that the dataset has.">
 							<label for="quantity">How many classes/output units?</label>
-							<input type="number" id="quantity" name="quantity" value="1000"> 
-							<div><i>Default: 1000 classes for training on ImageNet</i></div>
+							<input type="number" id="quantity" name="quantity" value="1000">
 						</div>
 					</div>
-				`;*/
+				`;
 		 
 		const IC_checkpoint = document.createElement('div');
 		content.node.appendChild(IC_checkpoint);
@@ -436,9 +435,9 @@ switch (problemSubmit) {
             const logsValue = (<HTMLSelectElement>(
               document.getElementById('logs')
             )).value;
-            /*const quantityValue = (<HTMLInputElement>(
+            const quantityValue = (<HTMLInputElement>(
               document.getElementById('quantity')
-            )).value;*/
+            )).value;
             const rateValue = (<HTMLInputElement>(
               document.getElementById('rate')
             )).value;
@@ -498,10 +497,10 @@ switch (problemSubmit) {
 							'$': useGPUValue,
 							'type': typeof(useGPUValue),
 						},
-						/*'modelparameters:num_classes': {
+						'modelparameters:num_classes': {
 							'$': quantityValue, 
 							'type': typeof(quantityValue),
-						},*/
+						},
 						'modelparameters:save_checkpoint': {
 							'$': modelCheckpointValue,
 							'type': typeof(modelCheckpointValue),
