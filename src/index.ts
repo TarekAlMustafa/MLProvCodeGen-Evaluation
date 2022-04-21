@@ -70,6 +70,7 @@ async function activate (app: JupyterFrontEnd, palette: ICommandPalette, launche
   const content = new Widget();
   const widget = new MainAreaWidget({ content });
   widget.id = 'MLProvCodeGen-jupyterlab';
+  content.id = 'MLProvCodeGen-content' // id used to style (add scrollbars)
   widget.title.label = 'MLProvCodeGen';
   widget.title.closable = true;
 // ------------------------------------------------------------------------------------------------------------------------------- //
