@@ -165,7 +165,7 @@ Original author: N. Janakiev https://github.com/njanakiev Twitter: https://twitt
 
     nb['cells'] = [nbf.v4.new_markdown_cell(text)]
 
-    file_loader = FileSystemLoader('jinjaTemplates/MulticlassClassification')
+    file_loader = FileSystemLoader('extension/jinjaTemplates/MulticlassClassification')
     env = Environment(loader=file_loader, trim_blocks=True, lstrip_blocks=True)
     dataset = user_inputs['entity']['data_ingestion']['dataingestion:dataset_id']
     random_seed = user_inputs['entity']['data_segregation']['datasegregation:random_state']['$']

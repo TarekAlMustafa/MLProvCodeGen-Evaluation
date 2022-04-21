@@ -813,8 +813,8 @@ case 'MulticlassClassification':
 					},
 				}
 			};
-			var method = 'MulticlassClassification'
-			const reply = await generateNotebook(method, objBody, content)
+			var method = 'MulticlassClassification';
+			const reply = await generateNotebook(method, objBody, content);
 			console.log(reply);
 			console.log('line 819')
 			if (reply["greetings"] === 'success') {
