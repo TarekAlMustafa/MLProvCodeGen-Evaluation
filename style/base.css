@@ -78,3 +78,7 @@
 			padding-top:3px;
 		}
 		
+		.p-Widget, .lm-widget{
+			overflow-y: auto;
+		}
+		
