@@ -816,8 +816,9 @@ case 'MulticlassClassification':
 			var method = 'MulticlassClassification'
 			const reply = await generateNotebook(method, objBody, content)
 			console.log(reply);
+			console.log('line 819')
 			if (reply["greetings"] === 'success') {
-				var path = window.location.href + '/tree/GeneratedNotebooks/MulticlassClassification.ipynb';
+				var path = window.location.href + '/tree/extension/GeneratedNotebooks/MulticlassClassification.ipynb';
 				console.log(path);
 				console.log('123');
 				console.log(path);
