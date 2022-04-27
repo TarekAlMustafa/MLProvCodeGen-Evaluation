@@ -70,7 +70,7 @@ async function activate (app: JupyterFrontEnd, palette: ICommandPalette, launche
   const content = new Widget();
   const widget = new MainAreaWidget({ content });
   widget.id = 'MLProvCodeGen-jupyterlab';
-  content.id = 'MLProvCodeGen-content' // id used to style (add scrollbars)
+  content.id = 'MLProvCodeGen-content' // id used to add scrollbars in base.css
   widget.title.label = 'MLProvCodeGen';
   widget.title.closable = true;
 // ------------------------------------------------------------------------------------------------------------------------------- //
@@ -213,6 +213,7 @@ switch (problemSubmit) {
 						<div title="Select your dataset here!">
 						<label for="dataSelection">Select your dataset:</label>
 						<select name="dataSelection" id="dataSelection">
+							<option value="FakeData"> Fake Data for Evaluation </option>
 							<option value="MNIST"> MNIST </option>
 							<option value="FashionMNIST"> FashionMNIST </option>
 							<option value="CIFAR10"> CIFAR10 </option>
@@ -361,7 +362,7 @@ switch (problemSubmit) {
         content.node.appendChild(IC_classes);
 		IC_classes.innerHTML = `
 					<div class="flex-container2">
-						<div title="The number of output classes that the dataset has.">
+						<div title="Number of output classes of the original dataset.">
 							<label for="quantity">How many classes/output units?</label>
 							<input type="number" id="quantity" name="quantity" value="1000">
 						</div>
