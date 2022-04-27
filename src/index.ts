@@ -342,7 +342,7 @@ switch (problemSubmit) {
 						<div><b><u> Training</u></b></div>
 						<div title="For each epoch, the whole dataset will be iterated over once.\nIncreasing the # of epochs such that the model is trained longer might improve performance.">
 							<label for="epochs">How many epochs?</label>
-							<input type="number" id="epochs" name="epochs" value="3">
+							<input type="number" id="epochs" name="epochs" value="2">
 						</div>
 					</div>
 				`;
@@ -353,7 +353,7 @@ switch (problemSubmit) {
 					<div class="flex-container2">
 						<div title="Batch size defines how much data is input into the model before changing its parameters.">
 							<label for="batches"> Batch Size</label>
-							<input type="number" id="batches" name="batches" value="128">
+							<input type="number" id="batches" name="batches" value="8">
 						</div>
 					</div>
 				`;
@@ -364,7 +364,7 @@ switch (problemSubmit) {
 					<div class="flex-container2">
 						<div title="Number of output classes of the original dataset.">
 							<label for="quantity">How many classes/output units?</label>
-							<input type="number" id="quantity" name="quantity" value="1000">
+							<input type="number" id="quantity" name="quantity" value="8">
 						</div>
 					</div>
 				`;
