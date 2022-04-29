@@ -217,6 +217,7 @@ switch (problemSubmit) {
 							<option value="MNIST"> MNIST </option>
 							<option value="FashionMNIST"> FashionMNIST </option>
 							<option value="CIFAR10"> CIFAR10 </option>
+							<option value="user"> Use your own data by adding it to the notebook later </option>
 						</select>
 						</div>	
 					</div>
@@ -351,7 +352,7 @@ switch (problemSubmit) {
 		content.node.appendChild(IC_batchSize);
 		IC_batchSize.innerHTML = `
 					<div class="flex-container2">
-						<div title="Batch size defines how much data is input into the model before changing its parameters.">
+						<div title="Batch size defines how much data is input into the model before changing its parameters.\nWe recommend size 8 for FakeData and 128 for real data.">
 							<label for="batches"> Batch Size</label>
 							<input type="number" id="batches" name="batches" value="8">
 						</div>
