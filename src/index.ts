@@ -489,7 +489,7 @@ switch (problemSubmit) {
 					'ex:Data Ingestion Data': {
 						'ex:data_format': dataValue,
 						'ex:dataset_id': dataSelectionValue,
-						'ex:num_classes': {
+						'ex:classes': {
 							'$': quantityValue, 
 							'type': typeof(quantityValue),
 						},
