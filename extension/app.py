@@ -101,7 +101,7 @@ Install required packages before running"""))
     #Data Segregation
     nb['cells'].append(nbf.v4.new_markdown_cell("""### Data Segregation"""))
     template = env.get_template('006_dataSegregation.jinja')
-    output = template.render(data_format = data_format, dataset = dataset, pretrained = pretrained, gpu = gpu, batch_size = batch_size, print_every=print_every)
+    output = template.render(data_format = data_format, dataset = dataset, pretrained = pretrained, gpu = gpu, batch_size = batch_size, print_every=print_every, num_classes = num_classes)
     nb['cells'].append(nbf.v4.new_code_cell(output))
 
     #Model

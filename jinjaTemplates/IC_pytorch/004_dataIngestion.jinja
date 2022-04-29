@@ -67,8 +67,8 @@ checkpoint_dir.mkdir(parents=True, exist_ok=True)
 {% if data_format == "Public dataset" %}
 {% if dataset == "FakeData" %}
 dataset = getattr(datasets, 'FakeData')
-training_dataset = dataset(size = 80, image_size = (3, 224, 224), num_classes = 8)
-testing_dataset = dataset(size = 8, image_size = (3, 224, 224), num_classes = 8)
+training_dataset = dataset(size = 100, image_size = (3, 224, 224), num_classes = {{ num_classes }})
+testing_dataset = dataset(size = 10, image_size = (3, 224, 224), num_classes = {{ num_classes }})
 {% else %}
 dataset = getattr(datasets, '{{ dataset }}')
 training_dataset = dataset("./data", train=True, download=True)

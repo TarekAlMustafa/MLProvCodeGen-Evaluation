@@ -12,8 +12,8 @@ print_every = {{ print_every }}  # batches
 # Wrap in data loader.
 {% if dataset == "FakeData" %}
 dataset = getattr(datasets, 'FakeData')
-training_dataset = dataset(size = 80, image_size = (3, 224, 224), num_classes = 8, transform = transform)
-testing_dataset = dataset(size = 8, image_size = (3, 224, 224), num_classes = 8, transform = transform)
+training_dataset = dataset(size = 100, image_size = (3, 224, 224), num_classes = {{ num_classes }}, transform = transform)
+testing_dataset = dataset(size = 10, image_size = (3, 224, 224), num_classes = {{ num_classes }}, transform = transform)
 {% else %}
 training_dataset = dataset("./data", train=True, download=True, transform=transform)
 testing_dataset = dataset("./data", train=False, download=True, transform=transform)
