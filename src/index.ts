@@ -488,7 +488,11 @@ switch (problemSubmit) {
 				'entity':{
 					'data_ingestion': {
 						'dataingestion:data_format': dataValue,
-						'dataingestion:dataset_id': dataSelectionValue
+						'dataingestion:dataset_id': dataSelectionValue,
+						'modelparameters:num_classes': {
+							'$': quantityValue, 
+							'type': typeof(quantityValue),
+						},
 					},
 					'model_parameters': {
 						'modelparameters:model_name': modelValue,
@@ -499,10 +503,6 @@ switch (problemSubmit) {
 						'modelparameters:gpu_enable': {
 							'$': useGPUValue,
 							'type': typeof(useGPUValue),
-						},
-						'modelparameters:num_classes': {
-							'$': quantityValue, 
-							'type': typeof(quantityValue),
 						},
 						'modelparameters:save_checkpoint': {
 							'$': modelCheckpointValue,
