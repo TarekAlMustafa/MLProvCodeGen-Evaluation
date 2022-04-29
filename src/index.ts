@@ -227,9 +227,9 @@ switch (problemSubmit) {
         content.node.appendChild(IC_classes);
 		IC_classes.innerHTML = `
 					<div class="flex-container2">
-						<div title="Number of output classes of the original dataset.">
+						<div title="Number of output classes of the original dataset.\nDefault for public datasets is 10 classes.">
 							<label for="quantity">How many classes/output units?</label>
-							<input type="number" id="quantity" name="quantity" value="8">
+							<input type="number" id="quantity" name="quantity" value="10">
 						</div>
 					</div>
 				`;
