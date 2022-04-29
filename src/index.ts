@@ -200,12 +200,12 @@ switch (problemSubmit) {
 							<label for="data">Which data format do you want to use?</label>
 							<select name="data" id="data">
 								<option value="Public dataset"> Public dataset </option>
-								<option value="Numpy arrays"> Numpy arrays </option>
-								<option value="Image files"> Image files </option>
 							</select>
 						</div>
 					</div>
 						`;
+						//<option value="Numpy arrays"> Numpy arrays </option>
+						//<option value="Image files"> Image files </option>
 		const IC_dataset = document.createElement('div');
 		content.node.appendChild(IC_dataset);
 		IC_dataset.innerHTML = `
