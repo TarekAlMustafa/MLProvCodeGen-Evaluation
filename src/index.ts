@@ -489,7 +489,7 @@ switch (problemSubmit) {
 					'data_ingestion': {
 						'dataingestion:data_format': dataValue,
 						'dataingestion:dataset_id': dataSelectionValue,
-						'modelparameters:num_classes': {
+						'dataingestion:num_classes': {
 							'$': quantityValue, 
 							'type': typeof(quantityValue),
 						},
