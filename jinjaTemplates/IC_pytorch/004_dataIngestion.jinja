@@ -120,7 +120,7 @@ e_dataingestion_data = d1.entity(
 		{% elif dataset == "user" %}
 		('ex:description', ''),
 		{% endif %}
-		('ex:classes', len(dataset.classes)),
+		('ex:classes', {{ num_classes }}),
 		('ex:training_samples', str(instances_training)),
 		('ex:root_location', str(root_training)),
 ))

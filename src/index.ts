@@ -223,6 +223,17 @@ switch (problemSubmit) {
 					</div>
 						`;
 						
+		const IC_classes = document.createElement('div');
+        content.node.appendChild(IC_classes);
+		IC_classes.innerHTML = `
+					<div class="flex-container2">
+						<div title="Number of output classes of the original dataset.">
+							<label for="quantity">How many classes/output units?</label>
+							<input type="number" id="quantity" name="quantity" value="8">
+						</div>
+					</div>
+				`;
+						
 		const IC_preprocessing_text = document.createElement('div');
         content.node.appendChild(IC_preprocessing_text);
         IC_preprocessing_text.innerHTML = `
@@ -358,17 +369,6 @@ switch (problemSubmit) {
 						</div>
 					</div>
 				`;
-		
-        const IC_classes = document.createElement('div');
-        content.node.appendChild(IC_classes);
-		IC_classes.innerHTML = `
-					<div class="flex-container2">
-						<div title="Number of output classes of the original dataset.">
-							<label for="quantity">How many classes/output units?</label>
-							<input type="number" id="quantity" name="quantity" value="8">
-						</div>
-					</div>
-				`;
 		 
 		const IC_checkpoint = document.createElement('div');
 		content.node.appendChild(IC_checkpoint);
@@ -392,7 +392,7 @@ switch (problemSubmit) {
 						</div>
 					</div>
 				`;
-		const IC_logging = document.createElement('div');
+		/*const IC_logging = document.createElement('div');
 		content.node.appendChild(IC_logging);
 		IC_logging.innerHTML = `
 					<div class="flex-container2">
@@ -407,7 +407,7 @@ switch (problemSubmit) {
 							</select>
 						</div>
 					</div>
-						`;
+						`;*/
 		const submitButtonIC = document.createElement('div');
 		content.node.appendChild(submitButtonIC);
 		submitButtonIC.innerHTML = `
@@ -435,9 +435,9 @@ switch (problemSubmit) {
             const optimizerValue = (<HTMLSelectElement>(
               document.getElementById('optimizer')
             )).value;
-            const logsValue = (<HTMLSelectElement>(
+            /*const logsValue = (<HTMLSelectElement>(
               document.getElementById('logs')
-            )).value;
+            )).value;*/
             const quantityValue = (<HTMLInputElement>(
               document.getElementById('quantity')
             )).value;
@@ -534,7 +534,8 @@ switch (problemSubmit) {
 						}
 					},
 					'visualization_tool':{
-						'tool' : logsValue
+						//'tool' : logsValue,
+						'tool' : 'notAtAll'
 					},
 				}
 			};

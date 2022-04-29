@@ -6,7 +6,6 @@ checkpoint_dir.mkdir(parents=True, exist_ok=True){%endif%}
 # Set up model, loss, optimizer.
 lr = {{ lr }}
 model = models.{{ model_func }}(pretrained={{ pretrained }})
-{% if num_classes != 1000 %}
 num_classes = {{ num_classes }}
 {% if "resnet18" in model_func %}
 model.fc = torch.nn.Linear(in_features=model.fc.in_features, out_features=num_classes, bias=True)
@@ -14,7 +13,6 @@ model.fc = torch.nn.Linear(in_features=model.fc.in_features, out_features=num_cl
 model.classifier[-1] = torch.nn.Linear(in_features=model.classifier[-1].in_features, out_features=num_classes, bias=True)
 {% elif "densenet161" in model_func %}
 model.classifier = torch.nn.Linear(in_features=model.classifier.in_features, out_features=num_classes, bias=True)
-{% endif %}
 {% endif %}
 model = model.to(device)
 loss_func = nn.{{ loss }}()
@@ -53,7 +51,7 @@ e_modelparameters_data = d1.entity(
 		('ex:loss_function', '{{ loss }}'),
 		('ex:optimizer', '{{ optimizer }}'),
 		('ex:optimizer_learning_rate', lr),
-		('ex:num_classes', {{ num_classes }}),  
+		('ex:output_neurons', {{ num_classes }}),  
 ))
 d1.wasGeneratedBy(e_modelparameters_data, a_setmodelparameters)
 d1.wasInfluencedBy(e_modelparameters, e_datasegregation_data)

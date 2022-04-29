@@ -89,7 +89,7 @@ Install required packages before running"""))
     #Data Ingestion
     nb['cells'].append(nbf.v4.new_markdown_cell("""### Data Ingestion"""))
     template = env.get_template('004_dataIngestion.jinja')
-    output = template.render(data_format = data_format, dataset = dataset, pretrained = pretrained, visualization_tool = visualization_tool, checkpoint = checkpoint)
+    output = template.render(data_format = data_format, dataset = dataset, pretrained = pretrained, visualization_tool = visualization_tool, checkpoint = checkpoint, num_classes = num_classes)
     nb['cells'].append(nbf.v4.new_code_cell(output))
     
     #Data preparation
