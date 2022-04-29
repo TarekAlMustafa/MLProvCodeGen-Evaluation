@@ -53,12 +53,12 @@ Made by: https://www.jrieke.com/ Twitter: https://twitter.com/jrieke
     notebook = True
     data_format = user_inputs['entity']['data_ingestion']['dataingestion:data_format']
     dataset = user_inputs['entity']['data_ingestion']['dataingestion:dataset_id']
+    num_classes = user_inputs['entity']['data_ingestion']['dataingestion:num_classes']['$']
     checkpoint = user_inputs['entity']['model_parameters']['modelparameters:save_checkpoint']['$']
     lr = user_inputs['entity']['model_parameters']['modelparameters:optimizer_learning_rate']['$']
     gpu = user_inputs['entity']['model_parameters']['modelparameters:gpu_enable']['$']
     model_func = user_inputs['entity']['model_parameters']['modelparameters:model_name']
     pretrained = user_inputs['entity']['model_parameters']['modelparameters:pretrained']['$']
-    num_classes = user_inputs['entity']['model_parameters']['modelparameters:num_classes']['$']
     loss = user_inputs['entity']['model_parameters']['modelparameters:loss_function']
     optimizer = user_inputs['entity']['model_parameters']['modelparameters:optimizer']
     batch_size = user_inputs['entity']['training']['training:batch_size']['$']
