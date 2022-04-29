@@ -133,8 +133,8 @@ async function activate (app: JupyterFrontEnd, palette: ICommandPalette, launche
 				//console.log(reader.result);
 				var provenanceDataObj = JSON.parse(reader.result!.toString());
 				console.log(provenanceDataObj); 
-				console.log(provenanceDataObj.entity.experiment_info['experimentinfo:task_type']); 
-				const taskName = provenanceDataObj.entity.experiment_info['experimentinfo:task_type'];
+				//console.log(provenanceDataObj.entity.experiment_info['experimentinfo:task_type']); 
+				const taskName = provenanceDataObj.entity['ex:Experiment Info Data']['ex:task_type'];
 				var path = window.location.href + '/tree/GeneratedNotebooks/'
 				var notebookPath = "('"+path+taskName+".ipynb', 'MLProvCodeGen')";
 				console.log('path:' +path);
@@ -486,49 +486,49 @@ switch (problemSubmit) {
             const objBody = {
 				exercise: exerciseValue,
 				'entity':{
-					'data_ingestion': {
-						'dataingestion:data_format': dataValue,
-						'dataingestion:dataset_id': dataSelectionValue,
-						'dataingestion:num_classes': {
+					'ex:Data Ingestion Data': {
+						'ex:data_format': dataValue,
+						'ex:dataset_id': dataSelectionValue,
+						'ex:num_classes': {
 							'$': quantityValue, 
 							'type': typeof(quantityValue),
 						},
 					},
-					'model_parameters': {
-						'modelparameters:model_name': modelValue,
-						'modelparameters:pretrained': {
+					'ex:Model Parameters Data': {
+						'ex:model_name': modelValue,
+						'ex:pretrained': {
 							'$': preTrainedModelValue,
 							'type': typeof(preTrainedModelValue),
 						},
-						'modelparameters:gpu_enable': {
+						'ex:gpu_enable': {
 							'$': useGPUValue,
 							'type': typeof(useGPUValue),
 						},
-						'modelparameters:save_checkpoint': {
+						'ex:save_checkpoint': {
 							'$': modelCheckpointValue,
 							'type': typeof(modelCheckpointValue),
 						},
-						'modelparameters:loss_function': lossFuncValue,
-						'modelparameters:optimizer': optimizerValue,
-						'modelparameters:optimizer_learning_rate': {
+						'ex:loss_function': lossFuncValue,
+						'ex:optimizer': optimizerValue,
+						'ex:optimizer_learning_rate': {
 							'$': rateValue,
 							'type': typeof(rateValue)
 						},
 					},
-					'training': {
-						'training:batch_size': {
+					'ex:Training Data': {
+						'ex:batch_size': {
 							'$': batchesValue,
 							'type': typeof(batchesValue),
 						},
-						'training:epochs': {
+						'ex:epochs': {
 							'$': epochsValue,
 							'type': typeof(epochsValue),
 						},
-						'training:print_progress': {
+						'ex:print_progress': {
 							'$': printProgressValue,
 							'type': typeof(printProgressValue),
 						},
-						'training:seed': {
+						'ex:seed': {
 							'$': seedValue,
 							'type': typeof(seedValue)
 						}
@@ -775,42 +775,42 @@ case 'MulticlassClassification':
 			const objBody = {
 				exercise: exercise,
 				'entity':{
-					'data_ingestion': {
-						'dataingestion:dataset_id': dataset
+					'ex:Data Ingestion Data': {
+						'ex:dataset_id': dataset
 					},			
-					'data_segregation': {
-						'datasegregation:test_size':{
+					'ex:Data Segregation Data': {
+						'ex:test_size':{
 							'$': test_split,
 							'type' : typeof(test_split),
 						},
-						'datasegregation:random_state': {
+						'ex:random_state': {
 							'$': random_seed,
 							'type': typeof(random_seed),
 						},
 					},
-					'model_parameters': {
-						'modelparameters:gpu_enable': {
+					'ex:Model Parameters Data': {
+						'ex:gpu_enable': {
 							'$':use_gpu,
 							'type':typeof(use_gpu),
 						},
-						'modelparameters:neuron_number': {
+						'ex:neuron_number': {
 							'$':neuron_number,
 							'type':typeof(neuron_number),
 						},
-						'modelparameters:loss_function': loss_func,
-						'modelparameters:optimizer': optimizer,
-						'modelparameters:optimizer_default_learning_rate':{
+						'ex:loss_function': loss_func,
+						'ex:optimizer': optimizer,
+						'ex:optimizer_default_learning_rate':{
 							'$':defaultValue,
 							'type': typeof(defaultValue),
 						},
-						'modelparameters:optimizer_learning_rate':{
+						'ex:optimizer_learning_rate':{
 							'$': lr,
 							'type': typeof(lr),
 						},
-						'modelparameters:activation_function': activation_func
+						'ex:activation_function': activation_func
 					},
-					'training': {
-						'training:epochs': {
+					'ex:Training Data': {
+						'ex:epochs': {
 							'$':epochs,
 							'type':typeof(epochs),
 						}

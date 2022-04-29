@@ -51,20 +51,20 @@ Made by: https://www.jrieke.com/ Twitter: https://twitter.com/jrieke
     #TODOvisualization_tool = user_inputs['visualization_tool']['tool']
     visualization_tool = 'notAtAll'
     notebook = True
-    data_format = user_inputs['entity']['data_ingestion']['dataingestion:data_format']
-    dataset = user_inputs['entity']['data_ingestion']['dataingestion:dataset_id']
-    num_classes = user_inputs['entity']['data_ingestion']['dataingestion:num_classes']['$']
-    checkpoint = user_inputs['entity']['model_parameters']['modelparameters:save_checkpoint']['$']
-    lr = user_inputs['entity']['model_parameters']['modelparameters:optimizer_learning_rate']['$']
-    gpu = user_inputs['entity']['model_parameters']['modelparameters:gpu_enable']['$']
-    model_func = user_inputs['entity']['model_parameters']['modelparameters:model_name']
-    pretrained = user_inputs['entity']['model_parameters']['modelparameters:pretrained']['$']
-    loss = user_inputs['entity']['model_parameters']['modelparameters:loss_function']
-    optimizer = user_inputs['entity']['model_parameters']['modelparameters:optimizer']
-    batch_size = user_inputs['entity']['training']['training:batch_size']['$']
-    num_epochs = user_inputs['entity']['training']['training:epochs']['$']
-    print_every = user_inputs['entity']['training']['training:print_progress']['$']
-    seed = user_inputs['entity']['training']['training:seed']['$']
+    data_format = user_inputs['entity']['ex:Data Ingestion Data']['ex:data_format']
+    dataset = user_inputs['entity']['ex:Data Ingestion Data']['ex:dataset_id']
+    num_classes = user_inputs['entity']['ex:Data Ingestion Data']['ex:classes']['$']
+    checkpoint = user_inputs['entity']['ex:Model Parameters Data']['ex:save_checkpoint']['$']
+    lr = user_inputs['entity']['ex:Model Parameters Data']['ex:optimizer_learning_rate']['$']
+    gpu = user_inputs['entity']['ex:Model Parameters Data']['ex:gpu_enable']['$']
+    model_func = user_inputs['entity']['ex:Model Parameters Data']['ex:model_name']
+    pretrained = user_inputs['entity']['ex:Model Parameters Data']['ex:pretrained']['$']
+    loss = user_inputs['entity']['ex:Model Parameters Data']['ex:loss_function']
+    optimizer = user_inputs['entity']['ex:Model Parameters Data']['ex:optimizer']
+    batch_size = user_inputs['entity']['ex:Training Data']['ex:batch_size']['$']
+    num_epochs = user_inputs['entity']['ex:Training Data']['ex:epochs']['$']
+    print_every = user_inputs['entity']['ex:Training Data']['ex:print_progress']['$']
+    seed = user_inputs['entity']['ex:Training Data']['ex:seed']['$']
     
 #-----------------------------------------------------------------------------
     # installs
@@ -167,22 +167,22 @@ Original author: N. Janakiev https://github.com/njanakiev Twitter: https://twitt
 
     file_loader = FileSystemLoader('jinjaTemplates/MulticlassClassification')
     env = Environment(loader=file_loader, trim_blocks=True, lstrip_blocks=True)
-    dataset = user_inputs['entity']['data_ingestion']['dataingestion:dataset_id']
-    random_seed = user_inputs['entity']['data_segregation']['datasegregation:random_state']['$']
-    test_split = user_inputs['entity']['data_segregation']['datasegregation:test_size']['$']
-    activation_func = user_inputs['entity']['model_parameters']['modelparameters:activation_function']
-    neuron_number = user_inputs['entity']['model_parameters']['modelparameters:neuron_number']['$']
-    optimizer = user_inputs['entity']['model_parameters']['modelparameters:optimizer']
-    loss_func = user_inputs['entity']['model_parameters']['modelparameters:loss_function']
-    epochs = user_inputs['entity']['training']['training:epochs']['$']
+     dataset = user_inputs['entity']['ex:Data Ingestion Data']['ex:dataset_id']
+    random_seed = user_inputs['entity']['ex:Data Segregation Data']['ex:random_state']['$']
+    test_split = user_inputs['entity']['ex:Data Segregation Data']['ex:test_size']['$']
+    activation_func = user_inputs['entity']['ex:Model Parameters Data']['ex:activation_function']
+    neuron_number = user_inputs['entity']['ex:Model Parameters Data']['ex:neuron_number']['$']
+    optimizer = user_inputs['entity']['ex:Model Parameters Data']['ex:optimizer']
+    loss_func = user_inputs['entity']['ex:Model Parameters Data']['ex:loss_function']
+    epochs = user_inputs['entity']['ex:Training Data']['ex:epochs']['$']
     #lr can be either 'NULL' or an actual value, therefore exception required
     try:
-        lr = user_inputs['entity']['model_parameters']['modelparameters:optimizer_learning_rate'][0]
+        lr = user_inputs['entity']['ex:Model Parameters Data']['ex:optimizer_learning_rate'][0]
     except KeyError:
-        lr = user_inputs['entity']['model_parameters']['modelparameters:optimizer_learning_rate']['$']
+        lr = user_inputs['entity']['ex:Model Parameters Data']['ex:optimizer_learning_rate']['$']
+    use_gpu = user_inputs['entity']['ex:Model Parameters Data']['ex:gpu_enable']['$']
+    default = user_inputs['entity']['ex:Model Parameters Data']['ex:optimizer_default_learning_rate']['$']
 
-    use_gpu = user_inputs['entity']['model_parameters']['modelparameters:gpu_enable']['$']
-    default = user_inputs['entity']['model_parameters']['modelparameters:optimizer_default_learning_rate']['$']
 
 
     #installs
