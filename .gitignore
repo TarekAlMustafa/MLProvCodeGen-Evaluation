@@ -1,4 +1,6 @@
 *.bundle.*
+lib/
+node_modules/
 .eslintcache
 .stylelintcache
 *.egg-info/
