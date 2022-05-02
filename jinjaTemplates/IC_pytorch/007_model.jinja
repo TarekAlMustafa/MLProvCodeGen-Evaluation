@@ -11,8 +11,8 @@ num_classes = {{ num_classes }}
 model.fc = torch.nn.Linear(in_features=model.fc.in_features, out_features=num_classes, bias=True)
 {% elif "alexnet" in model_func or "vgg" in model_func %}
 model.classifier[-1] = torch.nn.Linear(in_features=model.classifier[-1].in_features, out_features=num_classes, bias=True)
-{% elif "densenet161" in model_func %}
-model.classifier = torch.nn.Linear(in_features=model.classifier.in_features, out_features=num_classes, bias=True)
+{% elif "shufflenet_v2_x1_0" in model_func %}
+model.fc = torch.nn.Linear(in_features=model.fc.in_features, out_features=num_classes, bias=True)
 {% endif %}
 model = model.to(device)
 loss_func = nn.{{ loss }}()
@@ -39,8 +39,8 @@ e_modelparameters_data = d1.entity(
         ('ex:model_name', '{{ model_func }}'),
 		{% if model_func == "resnet18" %}
 		('ex:model_description', 'https://arxiv.org/abs/1512.03385'),
-		{% elif model_func == "densenet161" %}
-		('ex:model_description', 'https://arxiv.org/abs/1608.06993'),
+		{% elif model_func == "shufflenet_v2_x1_0" %}
+		('ex:model_description', 'https://arxiv.org/abs/1807.11164'),
 		{% elif model_func == "vgg16" %}
 		('ex:model_description', 'https://arxiv.org/abs/1409.1556'),
 		{% endif %}

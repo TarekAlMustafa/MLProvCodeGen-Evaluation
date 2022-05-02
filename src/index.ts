@@ -287,7 +287,7 @@ switch (problemSubmit) {
 							<label for="model">Select a model:</label>
 							<select name="model" id="model">
 								<option value="resnet18"> resnet18 </option>
-								<option value="densenet161"> densenet161 </option>
+								<option value="shufflenet_v2_x1_0"> shufflenet v2 </option>
 								<option value="vgg16"> vgg16 </option>
 							</select>
 						</div>
