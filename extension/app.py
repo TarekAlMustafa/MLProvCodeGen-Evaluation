@@ -107,7 +107,7 @@ Install required packages before running"""))
     #Model
     nb['cells'].append(nbf.v4.new_markdown_cell("""### Model"""))
     template = env.get_template('007_model.jinja')
-    output = template.render(model_func = model_func, pretrained = pretrained, num_classes = num_classes, loss = loss, optimizer = optimizer, visualization_tool = visualization_tool, lr = lr, gpu = gpu, checkpoint = checkpoint)
+    output = template.render(model_func = model_func, pretrained = pretrained, num_classes=num_classes, loss = loss, optimizer = optimizer, visualization_tool = visualization_tool, lr = lr, gpu = gpu, checkpoint = checkpoint)
     nb['cells'].append(nbf.v4.new_code_cell(output))
 
     #Training
@@ -167,7 +167,7 @@ Original author: N. Janakiev https://github.com/njanakiev Twitter: https://twitt
 
     file_loader = FileSystemLoader('jinjaTemplates/MulticlassClassification')
     env = Environment(loader=file_loader, trim_blocks=True, lstrip_blocks=True)
-     dataset = user_inputs['entity']['ex:Data Ingestion Data']['ex:dataset_id']
+    dataset = user_inputs['entity']['ex:Data Ingestion Data']['ex:dataset_id']
     random_seed = user_inputs['entity']['ex:Data Segregation Data']['ex:random_state']['$']
     test_split = user_inputs['entity']['ex:Data Segregation Data']['ex:test_size']['$']
     activation_func = user_inputs['entity']['ex:Model Parameters Data']['ex:activation_function']
@@ -180,9 +180,9 @@ Original author: N. Janakiev https://github.com/njanakiev Twitter: https://twitt
         lr = user_inputs['entity']['ex:Model Parameters Data']['ex:optimizer_learning_rate'][0]
     except KeyError:
         lr = user_inputs['entity']['ex:Model Parameters Data']['ex:optimizer_learning_rate']['$']
+
     use_gpu = user_inputs['entity']['ex:Model Parameters Data']['ex:gpu_enable']['$']
     default = user_inputs['entity']['ex:Model Parameters Data']['ex:optimizer_default_learning_rate']['$']
-
 
 
     #installs
